@@ -1,0 +1,70 @@
+SHORTSCU 2.1
+============
+
+KURULUM
+1. Bu klasörü istediğin yere çıkar (Belgeler ya da Masaüstü gibi). Zip içinden çalıştırma.
+2. "Shortscu.exe" dosyasına çift tıkla.
+3. Windows "Bilgisayarınız korundu" derse: "Ek bilgi" ve sonra "Yine de çalıştır".
+   Program imzasız olduğu için bu uyarı çıkar, bir kez onaylaman yeter.
+4. Pencereyi nasıl bıraktıysan (küçük, büyük, tam ekran, konumu) öyle açılır.
+   F11 tam ekranı açıp kapatır.
+
+İLK KULLANIMDA BİR KERE İNDİRİLENLER (internet açık olmalı)
+- Video motoru: ilk dışa aktarmada, yaklaşık 100 MB.
+- Konuşmayı yazıya dökme (Whisper): ilk kullandığında, yaklaşık 1,5 GB.
+- Kendi sesinle seslendirme (Chatterbox): "Ses" sekmesinde "Motoru kur" dediğinde,
+  yaklaşık 7 GB. Ekran kartında (RTX) çalışır. Sonrasında internet gerekmez.
+
+YENİ VİDEO
+1. "Yeni video": adını yaz, metni yapıştır, biçimi seç (9:16, 1:1, 4:5, 16:9).
+2. Ses için üç yol var:
+   - Kaydım hazır: ses dosyanı seç. Metnin yoksa boş bırak, konuşmayı dinleyip yazar.
+   - Kendi sesimle okusun: video kurulunca Ses sekmesinden ses profilinle seslendir.
+   - Şimdilik sessiz: zamanlamayı tahmin eder, sesi sonra eklersin.
+3. "Videoyu kur": her cümleye kelimelerine göre bir sahne kurar.
+
+DÜZENLEME
+- Önizlemede öğeye tıkla: sürükle, köşelerden büyüt, üstteki yuvarlakla döndür.
+- Sağ panel: yazı, renk, yazı tipi (kendi .ttf dosyanı da yükleyebilirsin),
+  giriş ve çıkış animasyonları, hareket eğrisi, zamanlama, ses efekti.
+- Hareket yolu: oynatma çizgisini bir ana götür, öğeyi taşı; o ana kare eklenir,
+  öğe kareler arasında kendisi hareket eder.
+- Karakterler: istediğin kadar karakter koy, her birinin duygusunu ve pozunu seç,
+  "Kelimede değişsin" ile anlatımın belli bir anında şaşırsın ya da sevinsin.
+  "Yeni karakter oluştur" ile kendi karakterini yap.
+- Sahne seçiliyken: kamera efektleri (sarsıntı, flaş, yakınlaşma...) ve renk filtresi.
+- Ses sekmesi: 72 efekt sesi, mikrofonla kayıt, ses düzenleyici (kes, sil, sustur,
+  mağara, telsiz, robot, sincap gibi 39 efekt), Seslerim kütüphanesi.
+- Kalıplar: beğendiğin sahneyi "Bu sahneyi kaydet" ile sakla, başka videolarda uygula.
+- Kapak: üstteki "Kapak" ve "Kapak önerileri" ile üç farklı kapaktan birini seç.
+
+2.1 İLE GELENLER
+- Güncellemeler artık kendiliğinden gelir: yeni sürüm çıkınca sağ altta kart belirir,
+  "Güncelle" deyince sadece değişen dosyalar iner, program yeniden başlar.
+- Zaman çizelgesinde sahneye tıkla: çoğalt, ikiye böl, birleştir, sil.
+- Öğeye tıkla: üstündeki çubuktan sil, çoğalt, öne getir, kilitle.
+- Shift ile birden çok öğe seç; sağdan hizala ya da eşit aralıkla diz. Ctrl+A hepsini seçer.
+- Önizlemede "Güvenli alan": YouTube'un beğen/yorum düğmelerinin kapattığı yerler.
+- Ses sekmesinde 12 telifsiz hazır müzik.
+- Karakterin ağzı sesin gerçekten yükseldiği anlarda açılır.
+- Üstteki "Geçmiş": videonun önceki hallerine dön.
+- Hata ikonu (Sorun bildir): rapor dosyası hazırlar, bana gönderirsin.
+
+DIŞA AKTARMA
+- "Dışa aktar": MP4 ve kapak PNG. Ses YouTube'a göre -14 LUFS'a ayarlanır.
+- Ana ekrandaki "Toplu dışa aktar" ile birden çok videoyu sırayla çıkar.
+- Klonlanmış ses kullandıysan YouTube'da "Değiştirilmiş ya da yapay içerik"
+  kutusunu işaretle.
+
+KISAYOLLAR
+Boşluk: oynat, durdur          Ctrl+Z / Ctrl+Y: geri al, ileri al
+Ctrl+D: çoğalt                 Ctrl+C / Ctrl+V: kopyala, yapıştır
+Delete: sil                    Oklar: kaydır (Shift ile 20 px)
+Ctrl+S: kaydet                 F11: tam ekran
+F12: sorun giderme konsolu
+
+DOSYALAR (Belgeler\Shortscu)
+Projeler\<video adı>     proje.json, medya\ (yüklediklerin), cikti\ (videolar, kapaklar)
+Karakterler, Kaliplar, Fontlar, Sesler, Sesler\Profiller: bütün projelerde kullanılanlar
+Sablonlar: şablonların
+Silinenler: silinen projeler (geri almak için klasörü Projeler'e taşı)
