@@ -1,24 +1,19 @@
 {
- "surum": "2.2.0",
- "tarih": "2026-11-21T15:08:23.953Z",
+ "surum": "2.2.1",
+ "tarih": "2026-11-21T15:38:10.545Z",
  "notlar": [
-  "6 yeni tema: kara tahta, kâğıt, sinema, defter, teknik çizim, çıkartma",
-  "Her video farklı: aynı hareket ve geçiş art arda gelmiyor",
-  "Metne göre kostüm: savaş, doktor, polis, futbolcu, astronot… (17 rol)",
-  "Spor paketi: 6 ligin takımları, skor, derbi, transfer, saha sahneleri, kişisel logolar",
-  "Yeni sahneler: mesajlaşma, harita, geri sayımlı soru; 4 yeni geçiş",
-  "Anlatımı temizle, duraklamaları kısalt, ilk 2 sn kontrolü, TikTok/Reels, editör görünümleri"
+  "Takım logoları adlarıyla daha doğru eşleşiyor (Parma düzeltildi)"
  ],
  "bagimlilik": "7ff535368b58dd7f",
- "tamPaket": "https://github.com/emrekzlrs/shortscu/releases/download/v2.2.0/Shortscu-Windows-2.2.0.zip",
+ "tamPaket": "https://github.com/emrekzlrs/shortscu/releases/download/v2.2.1/Shortscu-Windows-2.2.1.zip",
  "dosyalar": {
   "dist/ui/assets/index-B54m8pBn.css": [
    "62a6a30cd68144eea8a22c996687ad4386cffeca4d1c8baa65b72471b4a3d6fc",
    36174
   ],
-  "dist/ui/assets/index-CGNCal5A.js": [
-   "9105f1da388be8afbef78b29c217bb8471eb7ed5fb0da6bbaecbe36bc5e64571",
-   2951764
+  "dist/ui/assets/index-CikkgNEv.js": [
+   "579009f145a94b543a55466a29bcad2f28fedd60481fa61cf6a6e3875196f34a",
+   2951807
   ],
   "dist/ui/favicon.png": [
    "99ac1819ec29302425313832fa9fb3af813a36324582e2037631475f20230612",
@@ -457,7 +452,7 @@
    18412
   ],
   "dist/ui/index.html": [
-   "e56f7a97a35ca0e6ba7314075283ef364273e6ce3c64995a4f8ad4ac6fe74710",
+   "c9f7bd4879cdd08aa803e056c32bbac26d7fee0f152c95574e6c976ede501daf",
    453
   ],
   "dist/ui/muzik/aksiyon.ogg": [
@@ -1741,12 +1736,12 @@
    25562
   ],
   "dist/video/bundle.js": [
-   "aa77c8312460fc9b43a76db525e6b8d40a6582328aad6ff0598c9d5f3fd6dbe7",
-   3096467
+   "513e37c97caac9e2e509d5a7330a6d76fc78368495ea2f309aab16ae42fb13a0",
+   3096511
   ],
   "dist/video/bundle.js.map": [
-   "241bf4082080221dc7d107585d5b0ff33f25a24c9d1040a6a94d1c30d3a755c7",
-   1924876
+   "afb2ba729230cabb8d582168cf1916e718da895723dfeeb08dd3a8246b4692ed",
+   1925037
   ],
   "dist/video/favicon.ico": [
    "4b00984723c2fed999967eebf9b59f88350f7ab38716f2faf3587829e0f9be77",
@@ -2545,11 +2540,11 @@
    6518
   ],
   "package-lock.json": [
-   "079066c184089f2220179c68ef09b449d55a6ffc15396da054fd98b9ee2ed034",
+   "a9b078c553ecfd519f43c395274cbf8a110b4601a430076988111574a5ff6022",
    14975
   ],
   "package.json": [
-   "6bd82eaf578be6c4d84a931c123e7b17051b5a7d366ba32e742952ccb4321fad",
+   "ba259848f3446a7775b9d4bfe664ea4fd8dead38eff0636924ed105a27e83d01",
    225
   ],
   "server/guncelleme.mjs": [

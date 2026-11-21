@@ -2358,7 +2358,7 @@ const takimLogosu = (tk, dosyalar) => {
   const adaylar = [tk.ad, tk.id, tk.kisa, ...tk.adlar.map((a) => a.replace(/^\^/, ""))].map(sade).filter((x) => x.length >= 2);
   let enIyi = null;
   for (const d of dosyalar) {
-    const s = sade(d).replace(/(logo|arma|amblem|png|svg|crest|badge)/g, "");
+    const s = sade(d.replace(/\.[a-z0-9]+$/i, "").replace(/[\s_.-]+(logo|logosu|arma|armasi|amblem|crest|badge)$/i, ""));
     for (const a of adaylar) {
       const puan = s === a ? 3 : s.startsWith(a) && a.length >= 4 && s.length - a.length <= 2 ? 2 : a.length >= 6 && s.includes(a) ? 1 : 0;
       if (puan && (!enIyi || puan > enIyi[0])) enIyi = [puan, d];
@@ -45947,7 +45947,7 @@ addSequenceStackTraces(Folder);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("495df42662293b64")
+/******/ 		__webpack_require__.h = () => ("b8f402862b5def22")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
