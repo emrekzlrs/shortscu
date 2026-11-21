@@ -1,4 +1,4 @@
-SHORTSCU 2.1
+SHORTSCU 2.2
 ============
 
 KURULUM
@@ -37,6 +37,30 @@ DÜZENLEME
   mağara, telsiz, robot, sincap gibi 39 efekt), Seslerim kütüphanesi.
 - Kalıplar: beğendiğin sahneyi "Bu sahneyi kaydet" ile sakla, başka videolarda uygula.
 - Kapak: üstteki "Kapak" ve "Kapak önerileri" ile üç farklı kapaktan birini seç.
+
+2.2 İLE GELENLER
+- 6 yeni tema, her biri kendi çizim diliyle: Kara tahta, Kâğıt katmanları, Sinematik
+  belgesel, Defter sayfası, Teknik çizim, Çıkartma. Tema seçince arka planlar, girişler
+  ve geçişler de o temaya göre değişir.
+- Otomatik kurulum her metinde farklı sıra kullanır; art arda aynı giriş ya da geçiş gelmez.
+- Yeni yazı animasyonları: düşüp seken kelimeler, ortadan açılan kelimeler, elle yazılıyor.
+- Yeni geçişler: sıvı dolma, iris, tahta silgisi, kararıp açılma.
+- Karakterler yeniden çizildi: şapka, sakal, papyon yüze oturur; kravat eklendi.
+- Metindeki kelimeye göre kostüm ve eşya: savaş → asker ve tank, doktor → önlük ve
+  steteskop, gol → forma... 17 rol. Karakterin ayarlarında "Kostüm"den değiştirebilirsin.
+- Spor: Süper Lig, Premier Lig, La Liga, Serie A, Bundesliga, Ligue 1 takımları.
+  Metinde takım adı geçince logosu gelir; skor, derbi (VS), transfer ve saha sahneleri.
+- Logolarım: Kütüphane > Spor. Logolar yalnızca bu bilgisayarda (Belgeler\Shortscu\Logolarım)
+  durur, güncellemelerle kimseye gitmez. Takım logosunu takım adıyla kaydet
+  (ör. Galatasaray.png). Logo yoksa takım renkleriyle arma çizilir.
+- Yeni sahne kalıpları: mesajlaşma, harita, geri sayımlı soru.
+- Ses sekmesi > Anlatımı iyileştir: sesi temizle ve seviyele, uzun duraklamaları kısalt.
+- Zaman çizelgesinde "İlk 2 sn" denetimi (tek tıkla düzelt) ve sarı tempo uyarısı.
+- Dışa aktarırken YouTube Shorts / TikTok / Instagram Reels seçimi; güvenli alan da
+  seçtiğin uygulamaya göre gösterilir.
+- Üstteki palet düğmesi: editör görünümü (Gece, Gündüz, Orman, Grafit).
+- Animasyon ve geçiş seçerken her seçenek kendi hareketini küçük kutuda oynatır.
+- Kapak önerilerine "Takımlar karşı karşıya"; YouTube metinlerinde 5 başlık önerisi.
 
 2.1 İLE GELENLER
 - Güncellemeler artık kendiliğinden gelir: yeni sürüm çıkınca sağ altta kart belirir,

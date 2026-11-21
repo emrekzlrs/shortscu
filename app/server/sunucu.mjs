@@ -139,6 +139,19 @@ export const baslat = async (ayar = {}) => {
   const motorKok = ayar.motorKok || path.join(veriKok, ".motorlar");
   const projeKok = path.join(veriKok, "Projeler");
   const sablonKok = path.join(veriKok, "Sablonlar");
+  // Kişisel logolar (takım armaları vb.): yalnızca bu bilgisayarda durur, güncellemelerle dağıtılmaz
+  const logoKok = path.join(veriKok, "Logolarım");
+  // program klasörüne bırakılmış logoları (ilk kurulum, elle kopyalama) kişisel klasöre al; var olanların üstüne yazma
+  if (ayar.ekLogoKok) {
+    try {
+      const ekler = await fsp.readdir(ayar.ekLogoKok).catch(() => []);
+      if (ekler.length) await fsp.mkdir(logoKok, { recursive: true });
+      for (const ad of ekler) {
+        const hedef = path.join(logoKok, ad);
+        if (/\.(png|jpe?g|webp|svg|gif)$/i.test(ad) && !fs.existsSync(hedef)) await fsp.copyFile(path.join(ayar.ekLogoKok, ad), hedef);
+      }
+    } catch {}
+  }
   await fsp.mkdir(projeKok, { recursive: true });
   await fsp.mkdir(sablonKok, { recursive: true });
   const klasorAc = ayar.klasorAc || ((yol) => {
@@ -264,7 +277,7 @@ export const baslat = async (ayar = {}) => {
   };
 
   // ------------------------------------------------ dışa aktarma
-  const disaAktar = async (is, klasor, tur) => {
+  const disaAktar = async (is, klasor, tur, platform = "") => {
     const renderer = await import("@remotion/renderer");
     const dizin = projeYolu(klasor);
     const proje = JSON.parse(await fsp.readFile(path.join(dizin, "proje.json"), "utf8"));
@@ -317,7 +330,8 @@ export const baslat = async (ayar = {}) => {
     });
     is.asama = "Ses seviyesi ayarlanıyor (-14 LUFS)";
     is.yuzde = 100;
-    const hedef = path.join(cikti, `${adTemel}-${zamanDamgasi}.mp4`);
+    const ek = { tiktok: "-tiktok", reels: "-reels" }[platform] || "";
+    const hedef = path.join(cikti, `${adTemel}${ek}-${zamanDamgasi}.mp4`);
     try {
       await ffmpegCalistir(["-y", "-v", "error", "-i", ham, "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", hedef]);
       await fsp.rm(ham, { force: true });
@@ -329,11 +343,11 @@ export const baslat = async (ayar = {}) => {
     is.dosya = hedef;
   };
 
-  const isBaslat = (klasor, tur) => {
+  const isBaslat = (klasor, tur, platform = "") => {
     const id = Math.random().toString(36).slice(2, 10);
     const is = { id, klasor, tur, asama: "Sırada", yuzde: 0, dosya: null, hata: null, bitti: false, uyari: null, iptal: null };
     isler.set(id, is);
-    disaAktar(is, klasor, tur)
+    disaAktar(is, klasor, tur, platform)
       .catch((e) => {
         const m = String(e && e.message ? e.message : e);
         kayitYaz("disa-aktar", e && e.stack ? e.stack : m);
@@ -359,6 +373,7 @@ export const baslat = async (ayar = {}) => {
         const d = path.join(projeYolu(parca[1]), "medya", guvenliAd(parca.slice(2).join("/")));
         return dosyaGonder(req, res, d, true);
       }
+      if (parca[0] === "logolar" && parca.length >= 2) return dosyaGonder(req, res, path.join(logoKok, guvenliAd(parca.slice(1).join("/"))), true);
       if (parca[0] === "kutuphane" && parca.length === 3) return dosyaGonder(req, res, kutuphaneYolu(parca[1], parca[2]).dosya);
       if (parca[0] === "cikti" && parca.length >= 3) {
         const d = path.join(projeYolu(parca[1]), "cikti", guvenliAd(parca[2]));
@@ -366,6 +381,24 @@ export const baslat = async (ayar = {}) => {
       }
 
       if (parca[0] === "api") {
+        if (parca[1] === "logolar") {
+          await fsp.mkdir(logoKok, { recursive: true });
+          if (parca.length === 2 && req.method === "GET") {
+            const l = [];
+            for (const ad of await fsp.readdir(logoKok)) if (/\.(png|jpe?g|webp|svg|gif)$/i.test(ad)) l.push({ dosya: ad, guncel: (await fsp.stat(path.join(logoKok, ad))).mtimeMs });
+            l.sort((a, b) => a.dosya.localeCompare(b.dosya, "tr"));
+            return jsonGonder(res, 200, l);
+          }
+          if (parca.length === 2 && req.method === "POST") {
+            const ad = guvenliAd(url.searchParams.get("ad") || "logo.png");
+            await fsp.writeFile(path.join(logoKok, ad), await govdeOku(req, 50 * 1024 * 1024));
+            return jsonGonder(res, 200, { dosya: ad });
+          }
+          if (parca[2] === "ac" && req.method === "POST") {
+            klasorAc(logoKok);
+            return jsonGonder(res, 200, { tamam: true, yol: logoKok });
+          }
+        }
         const yontem = req.method;
         // /api/projeler
         if (parca[1] === "projeler" && yontem === "GET") {
@@ -375,7 +408,7 @@ export const baslat = async (ayar = {}) => {
             try {
               const st = await fsp.stat(j);
               const p = JSON.parse(await fsp.readFile(j, "utf8"));
-              liste.push({ klasor: ad, ad: p.ad, guncel: st.mtimeMs, sahne: p.sahneler?.length || 0, sure: p.ses?.sure || 0, tema: p.tema?.renk || null });
+              liste.push({ klasor: ad, ad: p.ad, guncel: st.mtimeMs, sahne: p.sahneler?.length || 0, sure: p.ses?.sure || 0, tema: p.tema?.renk || null, seri: p.seriAdi || "", bolum: p.bolumNo || 0 });
             } catch {}
           }
           liste.sort((a, b) => b.guncel - a.guncel);
@@ -527,7 +560,7 @@ export const baslat = async (ayar = {}) => {
           }
           if (parca[3] === "disa-aktar" && yontem === "POST") {
             const tur = url.searchParams.get("tur") === "kapak" ? "kapak" : "video";
-            const is = isBaslat(klasor, tur);
+            const is = isBaslat(klasor, tur, url.searchParams.get("platform") || "");
             return jsonGonder(res, 200, { id: is.id });
           }
         }

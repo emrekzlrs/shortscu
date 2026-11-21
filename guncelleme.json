@@ -1,24 +1,24 @@
 {
- "surum": "2.1.0",
- "tarih": "2026-11-20T19:50:32.496Z",
+ "surum": "2.2.0",
+ "tarih": "2026-11-21T15:06:33.194Z",
  "notlar": [
-  "Kamera yaklaşması artık başlığı ve karakteri kadrajdan atmıyor",
-  "Yeni saç ve sakal çizimleri (15 saç, 7 sakal)",
-  "Sahneye tıkla: çoğalt, ikiye böl, birleştir, sil",
-  "Öğeye tıkla: üstte sil, çoğalt, öne getir, kilitle",
-  "Shorts güvenli alanı, 12 telifsiz müzik, çoklu seçim ve hizalama",
-  "Karakterin ağzı sese göre açılıyor, sürüm geçmişi, sorun bildir"
+  "6 yeni tema: kara tahta, kâğıt, sinema, defter, teknik çizim, çıkartma",
+  "Her video farklı: aynı hareket ve geçiş art arda gelmiyor",
+  "Metne göre kostüm: savaş, doktor, polis, futbolcu, astronot… (17 rol)",
+  "Spor paketi: 6 ligin takımları, skor, derbi, transfer, saha sahneleri, kişisel logolar",
+  "Yeni sahneler: mesajlaşma, harita, geri sayımlı soru; 4 yeni geçiş",
+  "Anlatımı temizle, duraklamaları kısalt, ilk 2 sn kontrolü, TikTok/Reels, editör görünümleri"
  ],
  "bagimlilik": "7ff535368b58dd7f",
- "tamPaket": "https://github.com/emrekzlrs/shortscu/releases/download/v2.1.0/Shortscu-Windows-2.1.0.zip",
+ "tamPaket": "https://github.com/emrekzlrs/shortscu/releases/download/v2.2.0/Shortscu-Windows-2.2.0.zip",
  "dosyalar": {
-  "dist/ui/assets/index-2QXMnIB8.js": [
-   "7f5ba8476ef979a955a0fa2c52a85b44be4608b6e2fa8257669d5c1a18a3e4bc",
-   2882010
+  "dist/ui/assets/index-B54m8pBn.css": [
+   "62a6a30cd68144eea8a22c996687ad4386cffeca4d1c8baa65b72471b4a3d6fc",
+   36174
   ],
-  "dist/ui/assets/index-CG00uTMj.css": [
-   "8a5974e63d4e9ab20f2cd3a2ff9657b359fd13984a0d5d375a3fe62f24a678ef",
-   32867
+  "dist/ui/assets/index-CGNCal5A.js": [
+   "9105f1da388be8afbef78b29c217bb8471eb7ed5fb0da6bbaecbe36bc5e64571",
+   2951764
   ],
   "dist/ui/favicon.png": [
    "99ac1819ec29302425313832fa9fb3af813a36324582e2037631475f20230612",
@@ -457,7 +457,7 @@
    18412
   ],
   "dist/ui/index.html": [
-   "9b47c795c45b518e2ef71b15df4caac33e1c18288fbf1386972b94bb54815bc0",
+   "e56f7a97a35ca0e6ba7314075283ef364273e6ce3c64995a4f8ad4ac6fe74710",
    453
   ],
   "dist/ui/muzik/aksiyon.ogg": [
@@ -1741,12 +1741,12 @@
    25562
   ],
   "dist/video/bundle.js": [
-   "2b55c4204433fd3c8692526caaff9fa41853eb7e4369d1550d726a05877dfe7e",
-   3043394
+   "aa77c8312460fc9b43a76db525e6b8d40a6582328aad6ff0598c9d5f3fd6dbe7",
+   3096467
   ],
   "dist/video/bundle.js.map": [
-   "a233c7b8c7db5cf75e58a03e49de64de554d70e9bc0c6b9118bcee261b3a7ca8",
-   1864849
+   "241bf4082080221dc7d107585d5b0ff33f25a24c9d1040a6a94d1c30d3a755c7",
+   1924876
   ],
   "dist/video/favicon.ico": [
    "4b00984723c2fed999967eebf9b59f88350f7ab38716f2faf3587829e0f9be77",
@@ -2529,8 +2529,8 @@
    17324
   ],
   "electron/BENIOKU.txt": [
-   "c315e20bc0b209ccedd8847caa8573e21697846b4f6a38b259cd7c595639518f",
-   4007
+   "8fa4c7163e5ea72d80140f186e0a6a9fc12a24a6d2eb3d28ad2fcaf9e4f88a13",
+   5876
   ],
   "electron/ikon.ico": [
    "59f46ce30d30993f807ebcec5d70e652d1bd457eff9b27b5772ceb716ab998e4",
@@ -2541,15 +2541,15 @@
    29333
   ],
   "electron/main.cjs": [
-   "74fe7be4e128f51aaa5054166b6c6f524b705d7d7b1842a5d24078c9a9b09bee",
-   6327
+   "cb2d8d66dfcbb02e2f0b7ba4cbc41341e4284e248c6e438a55badb1ebe37b83c",
+   6518
   ],
   "package-lock.json": [
-   "0dd8870284f39a6320d9760b699f58d6f8cde525969d703676b6b0d9b93d6794",
+   "079066c184089f2220179c68ef09b449d55a6ffc15396da054fd98b9ee2ed034",
    14975
   ],
   "package.json": [
-   "9a483d262603fca86d17eb6ce5654b1498473fb78aacf2f9610fdd88b4818e64",
+   "6bd82eaf578be6c4d84a931c123e7b17051b5a7d366ba32e742952ccb4321fad",
    225
   ],
   "server/guncelleme.mjs": [
@@ -2565,8 +2565,8 @@
    3405
   ],
   "server/sunucu.mjs": [
-   "85c63994cb18409333b16316b84df312792c959b86ecaecd944455a01d0e9006",
-   33285
+   "b323d09792d8580f74d17c73ec724134bea7d90f19cce860d3c93dc81d4d6049",
+   35320
   ]
  }
 }

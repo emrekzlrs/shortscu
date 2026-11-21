@@ -72,6 +72,8 @@ if (!app.requestSingleInstanceLock()) {
       veriKok,
       motorKok: path.join(app.getPath("userData"), "motorlar"),
       appKok: KOK,
+      // program klasörünün yanındaki "Logolarım" klasörü: içindekiler kişisel logo klasörüne kopyalanır
+      ekLogoKok: path.join(path.dirname(process.execPath), "Logolarım"),
       klasorAc: (yol) => shell.openPath(yol),
       // güncelleme sonrası: pencere durumunu kaydet, kendini yeniden başlat
       yenidenBaslat: () => {
