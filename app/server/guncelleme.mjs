@@ -7,7 +7,23 @@ import path from "node:path";
 import crypto from "node:crypto";
 
 export const DEPO = "emrekzlrs/shortscu";
-const HAM = process.env.SHORTSCU_GUNCELLEME_URL || `https://raw.githubusercontent.com/${DEPO}/main`;
+const OZEL_URL = process.env.SHORTSCU_GUNCELLEME_URL || "";
+/**
+ * Dosyalar o anki son kayda (commit) sabitlenmiş adresten iner: raw.githubusercontent birkaç dakika
+ * eski kopyayı gösterebildiği için "main" yerine commit kimliği kullanılır; alınamazsa main'e düşülür.
+ */
+let HAM = OZEL_URL || `https://raw.githubusercontent.com/${DEPO}/main`;
+const hamAdresBelirle = async () => {
+  if (OZEL_URL) return OZEL_URL;
+  try {
+    const r = await fetch(`https://api.github.com/repos/${DEPO}/commits/main`, { headers: { Accept: "application/vnd.github+json", "User-Agent": "Shortscu" }, signal: AbortSignal.timeout(10000) });
+    if (r.ok) {
+      const j = await r.json();
+      if (/^[0-9a-f]{40}$/.test(j.sha || "")) return `https://raw.githubusercontent.com/${DEPO}/${j.sha}`;
+    }
+  } catch {}
+  return `https://raw.githubusercontent.com/${DEPO}/main`;
+};
 
 const surumKarsilastir = (a, b) => {
   const x = String(a).split(".").map(Number);
@@ -54,6 +70,7 @@ export const guncelleyici = ({ appKok, yenidenBaslat }) => {
   let sonManifest = null;
 
   const manifestAl = async () => {
+    HAM = await hamAdresBelirle();
     const r = await fetch(`${HAM}/guncelleme.json?t=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(15000) });
     if (r.status === 404) return null;
     if (!r.ok) throw new Error(`Güncelleme bilgisi alınamadı (${r.status})`);

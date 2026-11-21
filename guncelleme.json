@@ -1,6 +1,6 @@
 {
  "surum": "2.2.0",
- "tarih": "2026-11-21T15:06:33.194Z",
+ "tarih": "2026-11-21T15:08:23.953Z",
  "notlar": [
   "6 yeni tema: kara tahta, kâğıt, sinema, defter, teknik çizim, çıkartma",
   "Her video farklı: aynı hareket ve geçiş art arda gelmiyor",
@@ -2553,8 +2553,8 @@
    225
   ],
   "server/guncelleme.mjs": [
-   "5daf2d76b8ee7cb8e36111ea8dc0d3e52f9870c2a6fe297163a6a19c00b34ac3",
-   6115
+   "85d6220f564b02e874dd144b5014ac8eab3c06b48428d5ec25949c583fd4d88a",
+   6921
   ],
   "server/motorlar.mjs": [
    "1091d21b524fd4d5c5ce69ef4338c2fcdb6020675ecd7fba27736266bbecfe71",
