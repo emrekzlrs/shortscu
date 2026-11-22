@@ -14,6 +14,8 @@ const TORCH = "2.7.1";
 const CHATTERBOX = "0.1.7";
 const PY_PAKETLER = [
   "numpy<2",
+  // resemble-perth (ses filigranı) pkg_resources ister; setuptools 81'den itibaren yok
+  "setuptools<81",
   "librosa==0.11.0",
   "s3tokenizer",
   "transformers==5.2.0",

@@ -25,9 +25,39 @@ def cihaz():
 _model = None
 
 
+def filigran_hazirla():
+    """Chatterbox her sese görünmez bir yapay zekâ filigranı (resemble-perth) ekler.
+    perth, setuptools'un pkg_resources modülünü ister; o yoksa sessizce None kalır ve
+    model "'NoneType' object is not callable" hatasıyla açılamaz. Eksikse bir kez kurar."""
+    import importlib
+
+    try:
+        import pkg_resources  # noqa: F401
+    except ImportError:
+        import subprocess
+
+        subprocess.run(
+            [sys.executable, "-m", "pip", "install", "--no-warn-script-location", "setuptools<81"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+        importlib.invalidate_caches()
+    import perth
+
+    if perth.PerthImplicitWatermarker is None:
+        try:
+            from perth.perth_net.perth_net_implicit.perth_watermarker import PerthImplicitWatermarker
+
+            perth.PerthImplicitWatermarker = PerthImplicitWatermarker
+        except Exception as e:  # noqa: BLE001
+            raise RuntimeError(f"Ses filigranı modülü yüklenemedi: {e}. Ses motorunu Ayarlar'dan yeniden kur.") from e
+
+
 def model():
     global _model
     if _model is None:
+        filigran_hazirla()
         from chatterbox.mtl_tts import ChatterboxMultilingualTTS
 
         _model = ChatterboxMultilingualTTS.from_pretrained(device=cihaz())

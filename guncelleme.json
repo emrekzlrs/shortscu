@@ -1,11 +1,11 @@
 {
- "surum": "2.2.1",
- "tarih": "2026-11-21T15:38:10.545Z",
+ "surum": "2.2.2",
+ "tarih": "2026-11-22T14:16:48.373Z",
  "notlar": [
-  "Takım logoları adlarıyla daha doğru eşleşiyor (Parma düzeltildi)"
+  "Seslendirmedeki \"NoneType object is not callable\" hatası düzeltildi"
  ],
  "bagimlilik": "7ff535368b58dd7f",
- "tamPaket": "https://github.com/emrekzlrs/shortscu/releases/download/v2.2.1/Shortscu-Windows-2.2.1.zip",
+ "tamPaket": "https://github.com/emrekzlrs/shortscu/releases/download/v2.2.2/Shortscu-Windows-2.2.2.zip",
  "dosyalar": {
   "dist/ui/assets/index-B54m8pBn.css": [
    "62a6a30cd68144eea8a22c996687ad4386cffeca4d1c8baa65b72471b4a3d6fc",
@@ -2540,24 +2540,28 @@
    6518
   ],
   "package-lock.json": [
-   "a9b078c553ecfd519f43c395274cbf8a110b4601a430076988111574a5ff6022",
+   "525925cbcbf1ee827981b4f68227ebc1fdd295bc726fae67aa5ccb004392aa0a",
    14975
   ],
   "package.json": [
-   "ba259848f3446a7775b9d4bfe664ea4fd8dead38eff0636924ed105a27e83d01",
+   "49e31440fb1811f87860065fa297fbeca3968fe5d4f1f8617f8cb0f27cc4e9cb",
    225
+  ],
+  "server/__pycache__/ses_isci.cpython-313.pyc": [
+   "77b965dd8f675d5b50756af0aec8fd356e3c684717e7fb1257f8e71e9c01c05a",
+   6769
   ],
   "server/guncelleme.mjs": [
    "85d6220f564b02e874dd144b5014ac8eab3c06b48428d5ec25949c583fd4d88a",
    6921
   ],
   "server/motorlar.mjs": [
-   "1091d21b524fd4d5c5ce69ef4338c2fcdb6020675ecd7fba27736266bbecfe71",
-   11733
+   "ded3b70b1f35eb4a22280d034cc6811f7d16948a40f50f48cba433b120116d07",
+   11841
   ],
   "server/ses_isci.py": [
-   "fa53352d35eab6fe32f2c80ab4b806234596ca785a569286843215e2f2c5bc7c",
-   3405
+   "39e910d5ab4f32cab73c5aaf5fe96b91d11d0125a1110383910d13526b95580e",
+   4553
   ],
   "server/sunucu.mjs": [
    "b323d09792d8580f74d17c73ec724134bea7d90f19cce860d3c93dc81d4d6049",
