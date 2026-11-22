@@ -1,6 +1,6 @@
 {
  "surum": "2.2.2",
- "tarih": "2026-11-22T14:16:48.373Z",
+ "tarih": "2026-11-22T14:17:02.335Z",
  "notlar": [
   "Seslendirmedeki \"NoneType object is not callable\" hatası düzeltildi"
  ],
@@ -2546,10 +2546,6 @@
   "package.json": [
    "49e31440fb1811f87860065fa297fbeca3968fe5d4f1f8617f8cb0f27cc4e9cb",
    225
-  ],
-  "server/__pycache__/ses_isci.cpython-313.pyc": [
-   "77b965dd8f675d5b50756af0aec8fd356e3c684717e7fb1257f8e71e9c01c05a",
-   6769
   ],
   "server/guncelleme.mjs": [
    "85d6220f564b02e874dd144b5014ac8eab3c06b48428d5ec25949c583fd4d88a",
